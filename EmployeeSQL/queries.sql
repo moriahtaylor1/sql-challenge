@@ -2,15 +2,23 @@
 SELECT E.emp_no, last_name, first_name, sex, salary
 FROM employees AS E
 JOIN salaries AS S
-	ON E.emp_no = S.emp_no;
+	ON E.emp_no = S.emp_no
+;
 	
 -- 2. first name, last name, and hire date for employees who were hired in 1986.
 SELECT first_name, last_name, hire_date
 FROM employees
-WHERE EXTRACT(YEAR FROM hire_date) = 1986;
+WHERE EXTRACT(YEAR FROM hire_date) = 1986
+;
 
 -- 3. manager of each department with: department number, department name, the manager's employee number, last name, first name.
-
+SELECT mgr.dept_no, d.dept_name, mgr.emp_no, last_name, first_name
+FROM dept_manager AS mgr
+JOIN employees AS e
+	ON mgr.emp_no = e.emp_no
+JOIN departments AS d
+	ON mgr.dept_no = d.dept_no
+;
 
 -- 4. department of each employee with: employee number, last name, first name, and department name.
 
