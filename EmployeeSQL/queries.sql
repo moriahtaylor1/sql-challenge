@@ -54,7 +54,7 @@ JOIN dept_emp AS e_dept
 JOIN departments AS dept
 	ON e_dept.dept_no = dept.dept_no
 WHERE dept.dept_name = 'Sales'
-OR dept.dept_name 
+OR dept.dept_name = 'Development'
 ;
 
 -- 8. list the frequency count of employee last names (how many employees share each last name) in descending order
