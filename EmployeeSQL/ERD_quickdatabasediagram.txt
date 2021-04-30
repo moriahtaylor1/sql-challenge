@@ -1,17 +1,17 @@
 departments
 -
-dept_no VARCHAR(255) FK - dept_emp.dept_no
-dept_name VARCHAR(255) PK
+dept_no VARCHAR(255) PK
+dept_name VARCHAR(255) 
 
 dept_emp
 -
-emp_no INTEGER FK - employees.emp_no
-dept_no VARCHAR(255) PK
+emp_no INTEGER PK FK - employees.emp_no
+dept_no VARCHAR(255) PK FK - departments.dept_no
 
 dept_manager
 -
 dept_no VARCHAR(255) FK - dept_emp.dept_no
-emp_no INTEGER FK - employees.emp_no
+emp_no INTEGER PK FK - employees.emp_no
 
 employees
 -
@@ -26,9 +26,9 @@ hire_date TIMESTAMP
 titles
 -
 title_id VARCHAR(255) PK
-title VARCHAR(255) PK
+title VARCHAR(255)
 
 salaries
 -
-emp_no INTEGER FK - employees.emp_no
+emp_no INTEGER PK FK - employees.emp_no
 salary INTEGER
