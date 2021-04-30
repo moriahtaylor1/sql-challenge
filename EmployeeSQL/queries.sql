@@ -21,10 +21,20 @@ JOIN departments AS d
 ;
 
 -- 4. department of each employee with: employee number, last name, first name, and department name.
-
+SELECT e_dept.dept_no, e.emp_no, last_name, first_name, dept.dept_name
+FROM employees AS e
+JOIN dept_emp AS e_dept
+	ON e.emp_no = e_dept.emp_no
+JOIN departments AS dept
+	ON e_dept.dept_no = dept.dept_no
+;
 
 -- 5. first name, last name, and sex for employees whose first name is "Hercules" and last names begin with "B."
-
+SELECT first_name, last_name, sex
+FROM employees
+WHERE first_name='Hercules'
+AND last_name LIKE 'B%'
+;
 
 -- 6. all employees in the Sales department with their employee number, last name, first name, and department name.
 
